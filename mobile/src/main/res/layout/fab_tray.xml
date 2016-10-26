@@ -1,4 +1,4 @@
-<com.android2.calculator3.view.SolidPadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.origintech.calculator3.view.SolidPadLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tray"
     android:layout_width="match_parent"
@@ -35,4 +35,4 @@
         android:contentDescription="@string/panel_close_btn"
         style="@style/FabTray" />
 
-</com.android2.calculator3.view.SolidPadLayout>
+</com.origintech.calculator3.view.SolidPadLayout>

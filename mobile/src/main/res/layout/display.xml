@@ -15,7 +15,7 @@
   limitations under the License.
   -->
 
-<com.android2.calculator3.view.DisplayOverlay
+<com.origintech.calculator3.view.DisplayOverlay
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:graph="http://schemas.android.com/apk/res-auto"
     android:id="@+id/display"
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/display_shadow">
 
-        <com.android2.calculator3.view.GraphView
+        <com.origintech.calculator3.view.GraphView
             android:id="@+id/mini_graph"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/display_height">
 
-            <com.android2.calculator3.view.CalculatorEditText
+            <com.origintech.calculator3.view.CalculatorEditText
                 android:id="@+id/formula"
                 style="@style/Theme.Calculator.Display.Main.Formula"
                 android:inputType="text|textNoSuggestions"
@@ -77,7 +77,13 @@
                 android:textColor="@color/display_result_text_color"
                 android:layout_height="@dimen/display_result_height"
                 android:textIsSelectable="true"/>
-
+            <LinearLayout
+                android:id="@+id/adContainer"
+                android:layout_below="@id/result"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </LinearLayout>
         </RelativeLayout>
 
         <TextView
@@ -91,7 +97,6 @@
             android:id="@+id/the_clear_animation"
             android:layout_width="match_parent"
             android:layout_height="@dimen/display_height"/>
-
     </FrameLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -99,4 +104,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</com.android2.calculator3.view.DisplayOverlay>
+</com.origintech.calculator3.view.DisplayOverlay>

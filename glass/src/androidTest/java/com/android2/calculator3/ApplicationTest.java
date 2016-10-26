@@ -1,4 +1,4 @@
-package com.android2.calculator3;
+package com.origintech.calculator3;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

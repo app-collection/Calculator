@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android2.calculator3;
+package com.origintech.calculator3;
 
 import android.content.Context;
 import android.graphics.Paint;

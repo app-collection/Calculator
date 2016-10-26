@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LibCommon</string>
+    <string name="libcommon_no_app_store_found">没有找到应用市场</string>
+    <string name="libcommon_rate_me">亲，给个好评吧</string>
+    <string name="libcommon_rate_ok">带我去吧</string>
+    <string name="libcommon_rate_cancel">狠心拒绝</string>
+</resources>

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/floating_calc_background">
 
-    <com.android2.calculator3.view.CalculatorPadViewPager
+    <com.origintech.calculator3.view.CalculatorPadViewPager
         android:id="@+id/panelswitch"
         android:layout_width="@dimen/floating_width"
         android:layout_height="@dimen/floating_height"
@@ -26,7 +26,7 @@
             android:inAnimation="@anim/floating_slide_in"
             android:outAnimation="@anim/floating_slide_out">
 
-            <com.android2.calculator3.view.CalculatorEditText
+            <com.origintech.calculator3.view.CalculatorEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="23sp"
@@ -34,7 +34,7 @@
                 android:background="@android:color/transparent"
                 android:textCursorDrawable="@drawable/cursor"/>
 
-            <com.android2.calculator3.view.CalculatorEditText
+            <com.origintech.calculator3.view.CalculatorEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="23sp"
@@ -44,7 +44,7 @@
 
         </ViewSwitcher>
 
-        <com.android2.calculator3.view.BackspaceImageButton
+        <com.origintech.calculator3.view.BackspaceImageButton
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

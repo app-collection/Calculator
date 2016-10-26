@@ -1,18 +1,4 @@
-/*
-* Copyright (C) 2014 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+
 package com.origintech.calculator3;
 
 import android.animation.Animator;
@@ -38,6 +24,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.origintech.calculator3.CalculatorExpressionEvaluator.EvaluateCallback;
@@ -47,6 +34,9 @@ import com.origintech.calculator3.view.DisplayOverlay;
 import com.origintech.calculator3.view.EqualsImageButton;
 import com.origintech.calculator3.view.FormattedNumberEditText;
 import com.origintech.calculator3.view.ResizingEditText.OnTextSizeChangeListener;
+import com.origintech.lib.common.ad.IAd;
+import com.umeng.analytics.AnalyticsConfig;
+import com.umeng.analytics.MobclickAgent;
 import com.xlythe.floatingview.AnimationFinishedListener;
 import com.xlythe.math.Constants;
 import com.xlythe.math.EquationFormatter;
@@ -133,6 +123,9 @@ public abstract class BasicCalculator extends Activity
             ViewGroup.LayoutParams.MATCH_PARENT);
     private ViewGroup mDisplayForeground;
 
+    private IAd ad = null;
+    private LinearLayout adContainer = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,6 +133,9 @@ public abstract class BasicCalculator extends Activity
         savedInstanceState = savedInstanceState == null ? Bundle.EMPTY : savedInstanceState;
         initialize(savedInstanceState);
         mEvaluator.evaluate(mFormulaEditText.getCleanText(), this);
+
+        ad = IAd.AdProvider.getAddProvider(this);
+        adContainer = (LinearLayout)findViewById(R.id.adContainer);
     }
 
     protected void initialize(Bundle savedInstanceState) {
@@ -262,6 +258,8 @@ public abstract class BasicCalculator extends Activity
             }
         }));
         mDisplayView.scrollToMostRecent();
+
+        MobclickAgent.onResume(this);
     }
 
     @Override
@@ -269,6 +267,20 @@ public abstract class BasicCalculator extends Activity
         super.onPause();
         saveHistory(mFormulaEditText.getCleanText(), TextUtil.getCleanText(mResultEditText, mEvaluator.getSolver()), true);
         mPersist.save();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ad.loadAd(adContainer);
+        AnalyticsConfig.enableEncrypt(true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        ad.stopAd();
     }
 
     protected boolean saveHistory(String expr, String result, boolean ensureResult) {

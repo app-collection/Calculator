@@ -10,11 +10,11 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.android2.calculator3"
+        applicationId "com.origintech.calculator3"
         minSdkVersion 14
-        targetSdkVersion 24
-        versionCode 89
-        versionName "5.3"
+        targetSdkVersion 19
+        versionCode 14
+        versionName "1.4"
     }
     buildTypes {
         release {
@@ -34,5 +34,6 @@ dependencies {
     compile project(':circularreveal')
     compile project(':MathLibrary')
     compile project(':FloatingView')
-    wearApp project(':wear')
+    compile project(':libcommon')
+    compile files('libs/umeng-analytics-v5.6.4.jar')
 }

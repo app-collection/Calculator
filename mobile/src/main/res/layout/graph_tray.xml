@@ -14,7 +14,7 @@
         android:focusable="false"
         android:divider="@null"/>
 
-    <com.android2.calculator3.view.SolidPadLayout
+    <com.origintech.calculator3.view.SolidPadLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="@color/display_color"
@@ -42,6 +42,6 @@
             android:src="@drawable/btn_close"
             style="@style/GraphTray"/>
 
-    </com.android2.calculator3.view.SolidPadLayout>
+    </com.origintech.calculator3.view.SolidPadLayout>
 
 </LinearLayout>

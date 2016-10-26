@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LibCommon</string>
+    <string name="libcommon_no_app_store_found">No APP market found</string>
+    <string name="libcommon_rate_me">Give me a rate, thanks.</string>
+    <string name="libcommon_rate_ok">OK</string>
+    <string name="libcommon_rate_cancel">Cancel</string>
+</resources>

@@ -6,8 +6,8 @@
     <dimen name="history_graph_margin">90dp</dimen>
 
     <!-- Display -->
-    <dimen name="display_height">350dp</dimen>
-    <dimen name="display_height_with_shadow">356dp</dimen>
+    <dimen name="display_height">371dp</dimen>
+    <dimen name="display_height_with_shadow">377dp</dimen>
     <dimen name="display_formula_height">215dp</dimen>
     <dimen name="display_result_height">135dp</dimen>
     <dimen name="display_shadow">6dp</dimen>

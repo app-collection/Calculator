@@ -15,7 +15,7 @@
   limitations under the License.
   -->
 
-<com.android2.calculator3.view.CalculatorPadLayout
+<com.origintech.calculator3.view.CalculatorPadLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pad_operator"
     style="@style/PadLayoutStyle.Operator"
@@ -35,8 +35,7 @@
         style="@style/PadButtonStyle.Operator.Text"
         android:contentDescription="@string/desc_clr"
         android:onClick="onButtonClick"
-        android:text="@string/clr"
-        android:visibility="gone" />
+        android:text="@string/clr" />
 
     <Button
         android:id="@+id/op_div"
@@ -66,4 +65,4 @@
         android:onClick="onButtonClick"
         android:text="@string/op_add" />
 
-</com.android2.calculator3.view.CalculatorPadLayout>
+</com.origintech.calculator3.view.CalculatorPadLayout>

@@ -6,7 +6,7 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "com.android2.calculator3"
+        applicationId "com.origintech.calculator3"
         minSdkVersion 23
         targetSdkVersion 24
         versionCode 1

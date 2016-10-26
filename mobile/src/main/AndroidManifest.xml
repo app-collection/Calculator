@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android2.calculator3"
+    package="com.origintech.calculator3"
     android:installLocation="auto">
 
     <!-- For floating calculator -->
@@ -39,9 +39,10 @@
             android:resource="@dimen/app_minimumsize_h" />
 
         <activity
-            android:name=".Calculator"
+            android:name="com.origintech.calculator3.Calculator"
             android:exported="true"
             android:theme="@style/Theme.Calculator"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,7 +54,7 @@
         </activity>
 
         <!-- Receiver for the widget -->
-        <receiver android:name=".widget.CalculatorWidget">
+        <receiver android:name="com.origintech.calculator3.widget.CalculatorWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -64,7 +65,7 @@
 
         <!-- Activities and services for floating calc -->
         <activity
-            android:name=".floating.FloatingCalculatorCreateShortCutActivity"
+            android:name="com.origintech.calculator3.floating.FloatingCalculatorCreateShortCutActivity"
             android:icon="@drawable/ic_launcher_floating"
             android:label="@string/app_name">
             <intent-filter>
@@ -73,16 +74,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".floating.FloatingCalculatorOpenShortCutActivity"
+            android:name="com.origintech.calculator3.floating.FloatingCalculatorOpenShortCutActivity"
+            android:screenOrientation="portrait"
             android:excludeFromRecents="true"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
             android:theme="@style/TransparentBackground" />
-        <service android:name=".floating.FloatingCalculator">
+        <service android:name="com.origintech.calculator3.floating.FloatingCalculator">
             <intent-filter>
                 <action android:name="android.intent.action.CONFIGURATION_CHANGED" />
             </intent-filter>
         </service>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57ca62e5e0f55a1454000cf8"></meta-data>
+        <!-- <meta-data android:value="yingyonghui" android:name="UMENG_CHANNEL"/> -->
+        <!--<meta-data android:value="anzhi" android:name="UMENG_CHANNEL"/>-->
+        <meta-data android:value="samsung" android:name="UMENG_CHANNEL"/>
+        <!--<meta-data android:value="huawei" android:name="UMENG_CHANNEL"/>-->
+        <!--<meta-data android:name="UMENG_CHANNEL" android:value="baidu" />-->
+        <!--<meta-data android:value="360" android:name="UMENG_CHANNEL"/>-->
+        <!--<meta-data android:value="google" android:name="UMENG_CHANNEL"/>-->
+        <!--<meta-data android:value="xiaomi" android:name="UMENG_CHANNEL"/>-->
+        <!-- <meta-data android:value="QQ" android:name="UMENG_CHANNEL"/> -->
+
     </application>
 </manifest> 
