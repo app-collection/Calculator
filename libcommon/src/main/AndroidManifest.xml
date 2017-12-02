@@ -32,5 +32,8 @@
         <meta-data
             android:name="refreshInterval"
             android:value="15"/>
+        <meta-data
+            android:name="adPlaceId"
+            android:value="5395024"/>
     </application>
 </manifest>

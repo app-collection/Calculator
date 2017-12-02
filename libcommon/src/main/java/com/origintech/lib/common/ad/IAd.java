@@ -21,6 +21,7 @@ public interface IAd {
     void setContext(Context ctx);
     void after(Date time);  //投放广告时间限制
     void refreshInterval(int seconds);
+    void setPlacementId(String id);
     static class AdProvider {
         static public IAd getAddProvider(Context context){
 
@@ -49,6 +50,8 @@ public interface IAd {
                 }
                 //获取广告刷新周期
                 int refreshInterval = ai.metaData.getInt("refreshInterval");
+                //获取广告placement id
+                String placeId = ai.metaData.getString("adPlaceId");
 
                 if(obj instanceof IAd) {
                     ((IAd) obj).setContext(context);
@@ -56,6 +59,7 @@ public interface IAd {
                         ((IAd)obj).after(afterTime);
                     }
                     ((IAd)obj).refreshInterval(refreshInterval);
+                    ((IAd)obj).setPlacementId(placeId);
                     return (IAd) obj;
                 } else {
                     return null;

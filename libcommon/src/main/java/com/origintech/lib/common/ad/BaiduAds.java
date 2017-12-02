@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.baidu.mobads.AdSettings;
 import com.baidu.mobads.AdView;
 import com.baidu.mobads.AdViewListener;
 
@@ -20,6 +21,7 @@ public class BaiduAds implements IAd {
     private Context context = null;
     private Date afterTime = null;
     private int adInterval = 0;
+    private String placementId = "";
 
     private Handler handler = new Handler();
     private Runnable current = null;
@@ -46,6 +48,7 @@ public class BaiduAds implements IAd {
     @Override
     public void setContext(Context ctx) {
         this.context = ctx;
+        AdSettings.setSupportHttps(true);
     }
 
     @Override
@@ -58,8 +61,13 @@ public class BaiduAds implements IAd {
         this.adInterval = seconds;
     }
 
+    @Override
+    public void setPlacementId(String id) {
+        this.placementId = id;
+    }
+
     private AdView makeBannerView(){
-        AdView adView = new AdView(context,"3020380");
+        AdView adView = new AdView(context,"5395024");
         adView.setListener(new AdViewListener() {
             @Override
             public void onAdReady(AdView adView) {

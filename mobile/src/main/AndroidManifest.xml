@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.origintech.calculator3"
     android:installLocation="auto">
 
@@ -87,6 +88,27 @@
             </intent-filter>
         </service>
         <meta-data
+            tools:replace="android:value"
+            android:name="BaiduMobAd_APP_ID"
+            android:value="dd8b2814" />
+        <meta-data
+            tools:replace="android:value"
+            android:name="adProvider"
+            android:value="com.origintech.lib.common.ad.BaiduAds"/>
+        <meta-data
+            tools:replace="android:value"
+            android:name="afterTime"
+            android:value="2016-10-27 18:00"/>
+        <meta-data
+            tools:replace="android:value"
+            android:name="refreshInterval"
+            android:value="15"/>
+        <meta-data
+            tools:replace="android:value"
+            android:name="adPlaceId"
+            android:value="5395024"/>
+
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="57ca62e5e0f55a1454000cf8"></meta-data>
         <!-- <meta-data android:value="yingyonghui" android:name="UMENG_CHANNEL"/> -->
@@ -94,6 +116,7 @@
         <meta-data android:value="samsung" android:name="UMENG_CHANNEL"/>
         <!--<meta-data android:value="huawei" android:name="UMENG_CHANNEL"/>-->
         <!--<meta-data android:name="UMENG_CHANNEL" android:value="baidu" />-->
+        <!--<meta-data android:name="UMENG_CHANNEL" android:value="ali" />-->
         <!--<meta-data android:value="360" android:name="UMENG_CHANNEL"/>-->
         <!--<meta-data android:value="google" android:name="UMENG_CHANNEL"/>-->
         <!--<meta-data android:value="xiaomi" android:name="UMENG_CHANNEL"/>-->
